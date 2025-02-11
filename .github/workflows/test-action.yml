@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  test_action:
+    name: Test actions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Test AWS Regions latency
+        run: bash test-aws-latency.sh
